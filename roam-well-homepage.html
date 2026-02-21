@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#2A3522">
-<title>Roam Well — Curated Journeys for Independent Travellers</title>
+<title>Roam — Curated Journeys for Independent Travellers</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -51,9 +51,10 @@ header {
 }
 
 .logo {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Century Gothic', 'Futura', 'Trebuchet MS', sans-serif;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color: var(--cream);
   letter-spacing: 0.06em;
   text-decoration: none;
@@ -929,13 +930,144 @@ footer {
 
 .footer-legal a:hover { color: rgba(245,240,232,0.5); }
 
+
+/* ── SHE ROAMS TABS ───────────────────────────────────────── */
+.journey-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 40px;
+}
+.journey-tab {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border: 1px solid rgba(200,162,93,0.2);
+  background: transparent;
+  color: rgba(245,240,232,0.4);
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+}
+.journey-tab:hover {
+  color: rgba(245,240,232,0.75);
+  border-color: rgba(200,162,93,0.4);
+}
+.journey-tab.active {
+  background: rgba(200,162,93,0.12);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.journey-tab .she-roams-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-left: 8px;
+  vertical-align: middle;
+  opacity: 0.6;
+}
+.journey-panel { display: block; }
+.journey-panel.hidden { display: none; }
+
+/* She Roams grid — same structure, coming soon state */
+.she-roams-coming {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 60px;
+  border: 1px solid rgba(200,162,93,0.15);
+  background: rgba(200,162,93,0.04);
+  text-align: center;
+  min-height: 400px;
+}
+.she-roams-badge {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.she-roams-badge::before,
+.she-roams-badge::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: rgba(200,162,93,0.4);
+}
+.she-roams-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.she-roams-title em { font-style: italic; color: var(--gold); }
+.she-roams-body {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(245,240,232,0.55);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+.she-roams-destinations {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.she-roams-dest {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.35);
+}
+.she-roams-dest::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(200,162,93,0.3);
+  border-radius: 50%;
+}
+.she-roams-cta {
+  background: transparent;
+  border: 1px solid rgba(200,162,93,0.4);
+  color: var(--gold);
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.she-roams-cta:hover {
+  background: var(--gold);
+  color: var(--olive);
+}
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header id="header">
-  <a href="/" class="logo">Roam<span> Well</span></a>
+  <a href="/" class="logo">Roam</a>
   <nav>
     <a href="#journeys">Journeys</a>
     <a href="#how">How It Works</a>
@@ -951,7 +1083,7 @@ footer {
   <div class="hero-overlay-bottom"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">The Road Awaits</p>
-    <h1 class="hero-title">Travel well.<br><em>Together.</em></h1>
+    <h1 class="hero-title">Roam further.<br><em>Together.</em></h1>
     <p class="hero-sub">The world is richer when you travel with people who see it the way you do. Small groups, trusted local hosts, and journeys designed for adults who are ready to explore — for themselves.</p>
     <div class="hero-actions">
       <a href="#journeys" class="btn-primary">Explore Journeys</a>
@@ -984,9 +1116,17 @@ footer {
       <p class="eyebrow" style="color:var(--gold);">Where We Roam</p>
       <h2 class="section-title" style="color:var(--cream); margin-bottom:0;">Our <em>Journeys.</em></h2>
     </div>
-    <p class="journeys-note">One destination live now. Two more in development for 2027. All Roam Well journeys are adults only — this is your time.</p>
+    <p class="journeys-note">One destination live now. Two more in development for 2027. All Roam journeys are adults only — this is your time.</p>
   </div>
 
+  <!-- TABS -->
+  <div class="journey-tabs">
+    <button class="journey-tab active" onclick="switchTab('all', this)">All Journeys</button>
+    <button class="journey-tab" onclick="switchTab('she', this)">She Roams <span class="she-roams-dot"></span></button>
+  </div>
+
+  <!-- ALL JOURNEYS PANEL -->
+  <div id="panel-all" class="journey-panel">
   <div class="journeys-grid">
 
     <!-- TUSCANY — LIVE -->
@@ -1045,14 +1185,33 @@ footer {
     </div>
 
   </div>
+  </div><!-- /panel-all -->
+
+  <!-- SHE ROAMS PANEL -->
+  <div id="panel-she" class="journey-panel hidden">
+    <div style="display:block;">
+      <div class="she-roams-coming">
+        <div class="she-roams-badge">She Roams</div>
+        <h2 class="she-roams-title">Women-first departures.<br><em>Coming soon.</em></h2>
+        <p class="she-roams-body">She Roams is a dedicated programme of Roam departures crafted for women who want Italy done properly. Same intimate small groups, same cultural depth — with one distinctly Italian difference. Each She Roams departure is led by a carefully chosen Italian male host who knows his country the way only a local can. Consider it your chance to see Italy through his eyes, on your terms. Departures open for registration shortly.</p>
+        <div class="she-roams-destinations">
+          <span class="she-roams-dest">Tuscany, Italy</span>
+          <span class="she-roams-dest">Amalfi Coast, Italy</span>
+          <span class="she-roams-dest">Puglia, Italy</span>
+        </div>
+        <button class="she-roams-cta" onclick="openInterest('She Roams — Women-First Departures')">Register Your Interest</button>
+      </div>
+    </div>
+  </div><!-- /panel-she -->
+
 </section>
 
 <!-- HOW IT WORKS -->
 <section class="section" id="how">
   <div style="text-align:center; max-width: 560px; margin: 0 auto 0;">
-    <p class="eyebrow" style="justify-content:center;">The Roam Well Way</p>
+    <p class="eyebrow" style="justify-content:center;">The Roam Way</p>
     <h2 class="section-title" style="text-align:center;">From first enquiry to <em>lasting friendship.</em></h2>
-    <p class="section-body" style="margin: 0 auto; text-align:center;">Every Roam Well journey begins long before departure and carries on long after you return home.</p>
+    <p class="section-body" style="margin: 0 auto; text-align:center;">Every Roam journey begins long before departure and carries on long after you return home.</p>
   </div>
   <div class="how-grid">
     <div class="how-step">
@@ -1085,15 +1244,15 @@ footer {
 
 <!-- QUOTE -->
 <div class="quote-section">
-  <p class="quote-text">"There's a version of travel that's entirely yours — no compromises, no rushing, no counting heads. We built Roam Well because that version deserves to exist."</p>
-  <p class="quote-attr">The Roam Well Founders</p>
+  <p class="quote-text">"There's a version of travel that's entirely yours — no compromises, no rushing, no counting heads. We built Roam because that version deserves to exist."</p>
+  <p class="quote-attr">The Roam Founders</p>
 </div>
 
 <!-- WHY ROAM WELL -->
 <section class="section section-alt" id="why">
   <div class="why-grid">
     <div>
-      <p class="eyebrow">Why Roam Well</p>
+      <p class="eyebrow">Why Roam</p>
       <h2 class="section-title">Designed for the <em>independently minded.</em></h2>
       <p class="section-body">Not a tour group. Not a solo backpacking trip. Something between — structured enough to feel confident, open enough to feel free.</p>
       <div class="why-points">
@@ -1129,7 +1288,7 @@ footer {
           <div class="why-icon" style="font-size:13px; letter-spacing:0.04em;">18+</div>
           <div>
             <div class="why-label">Your time, entirely yours</div>
-            <p class="why-desc">Roam Well journeys are strictly adults only. This is your time — to be curious, spontaneous and fully present, without compromise. Every guest travels for themselves.</p>
+            <p class="why-desc">Roam journeys are strictly adults only. This is your time — to be curious, spontaneous and fully present, without compromise. Every guest travels for themselves.</p>
           </div>
         </div>
       </div>
@@ -1146,7 +1305,7 @@ footer {
   <div>
     <p class="eyebrow" style="color:var(--gold);">Begin Your Journey</p>
     <h2 class="cta-title">Ready to <em>roam?</em></h2>
-    <p class="cta-body">A 20-minute consultation — no pressure, no hard sell. We'll talk through the journey that interests you, answer every question you have, and see if Roam Well is the right fit. Most people leave feeling ready to go.</p>
+    <p class="cta-body">A 20-minute consultation — no pressure, no hard sell. We'll talk through the journey that interests you, answer every question you have, and see if Roam is the right fit. Most people leave feeling ready to go.</p>
     <div class="cta-actions">
       <a href="/cdn-cgi/l/email-protection#08606d646467487a6769657f6d6464266b67" class="btn-primary">Book a Consultation</a>
       <a href="roam-well-tuscany.html" class="btn-secondary">View Tuscany Journey</a>
@@ -1178,8 +1337,8 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">
-    <a href="/" class="logo">Roam<span> Well</span></a>
-    <p class="footer-tagline">Curated small-group travel for independent travellers who want depth, not just destinations.</p>
+    <a href="/" class="logo">Roam</a>
+    <p class="footer-tagline">Curated small-group journeys for independent travellers who want depth, not just destinations.</p>
     <a href="/cdn-cgi/l/email-protection#d7bfb2bbbbb897a5b8b6baa0b2bbbbf9b4b8" class="footer-email"><span class="__cf_email__" data-cfemail="3159545d5d5e71435e505c46545d5d1f525e">[email&#160;protected]</span></a>
   </div>
   <div>
@@ -1194,7 +1353,7 @@ footer {
     <p class="footer-col-title">About</p>
     <div class="footer-links">
       <a href="#how">How It Works</a>
-      <a href="#why">Why Roam Well</a>
+      <a href="#why">Why Roam</a>
       <a href="#">Before We Roam</a>
       <a href="#">After We Roam</a>
     </div>
@@ -1209,7 +1368,7 @@ footer {
   </div>
 </footer>
 <div class="footer-bottom">
-  <p class="footer-copy">© 2026 Roam Well. All rights reserved.</p>
+  <p class="footer-copy">© 2026 Roam. All rights reserved.</p>
   <div class="footer-legal">
     <a href="#">Privacy Policy</a>
     <a href="#">Terms & Conditions</a>
@@ -1311,7 +1470,7 @@ function submitInterest() {
     'Email: ' + email + '\n' +
     (note ? 'Notes: ' + note : '') + '\n\n---\nSent via roamwell.co'
   );
-  window.location.href = 'mailto:hello@roamwell.co?subject=' + subject + '&body=' + body;
+  window.location.href = 'mailto:hello@roam.co?subject=' + subject + '&body=' + body;
   closeInterest();
 }
 
@@ -1320,6 +1479,16 @@ document.addEventListener('keydown', function(e) {
 });
 
 // Header scroll
+// Tab switching — She Roams
+function switchTab(tab, btn) {
+  document.querySelectorAll('.journey-tab').forEach(function(t) {
+    t.classList.remove('active');
+  });
+  btn.classList.add('active');
+  document.getElementById('panel-all').classList.toggle('hidden', tab !== 'all');
+  document.getElementById('panel-she').classList.toggle('hidden', tab !== 'she');
+}
+
 var header = document.getElementById('header');
 window.addEventListener('scroll', function() {
   header.style.background = window.scrollY > 80
