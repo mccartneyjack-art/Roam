@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roam Well</title>
+<script>
+  // Detect mobile by screen width AND touch capability
+  var isMobile = (
+    window.innerWidth <= 768 ||
+    /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  );
+
+  // Redirect instantly — no flash, no delay
+  window.location.replace(isMobile ? 'roam-well-mobile-home.html' : 'roam-well-homepage.html');
+</script>
+
+<!-- Fallback if JS is disabled -->
+<noscript>
+  <meta http-equiv="refresh" content="0;url=roam-well-homepage.html">
+</noscript>
+</head>
+<body>
+  <!-- Invisible to user — redirect happens before render -->
+</body>
+</html>
